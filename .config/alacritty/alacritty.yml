@@ -1,4 +1,3 @@
-# ...
 
 # Colors (Dracula)
 colors:
@@ -25,7 +24,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x000000'
+    black:   '0x4d4d4d'
     red:     '0xff5555'
     green:   '0x50fa7b'
     yellow:  '0xf1fa8c'
@@ -69,5 +68,7 @@ colors:
   #
   indexed_colors: []
 
-# Visual Bell
-# ...
+window:
+  padding:
+    x: 10
+    y: 15

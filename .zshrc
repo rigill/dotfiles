@@ -5,13 +5,9 @@ fpath+=$HOME/.zsh/pure
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rrc/.oh-my-zsh"
 
-# Plugins
-# source $HOME/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 autoload -U promptinit; promptinit
 prompt pure
-plugins=(git debian k zsh-syntax-highlighting nvm)
+plugins=(git debian k zsh-syntax-highlighting nvm zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,6 +16,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='mvim'
 fi
+
+bindkey -v
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
