@@ -1,0 +1,97 @@
+" Enabling filetype support provides filetype-specific indenting,
+" syntax highlighting, omni-completion and other useful settings.
+filetype plugin indent on
+syntax on
+syntax enable
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+set autoindent                 " Minimal automatic indenting for any filetype.
+set backspace=indent,eol,start " Proper backspace behavior.
+set hidden                     " Possibility to have more than one unsaved buffers.
+set incsearch                  " Incremental search, hit `<CR>` to stop.
+set ruler                      " Shows the current line number at the bottom-right
+                               " of the screen.
+set wildmenu                   " Great command-line completion, use `<Tab>` to move
+                               " around and `<CR>` to validate.
+set noerrorbells
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set relativenumber
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set laststatus=2
+set splitbelow
+set hlsearch
+set scrolloff=8
+set wrap linebreak
+set showbreak=" "
+set cursorline
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+call plug#begin('~/.vim/plugged')
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mbbill/undotree'
+Plug 'dense-analysis/ale'
+Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+colorscheme dracula
+if executable('rg')
+  let g:rg_derive_root = 'true'
+endif
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let mapleader = "\<Space>"
+let g:netrw_browse_split = 5
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:netrw_liststyle = 3
+ let g:ale_linters = {
+\   'go': ['gopls'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint', 'tsserver'],
+\}
+let g:ale_fixers = {
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier','eslint'],
+\   'typescript': ['prettier', 'eslint'],
+\}
+let g:ale_typescript_prettier_use_local_config = 1
+let g:ale_completion_tsserver_autoimport = 1
+let g:ale_fix_on_save = 1
+let g:colorizer_auto_filetype='css'
+let g:tmux_navigator_no_mappings = 1
+" Set coc to complete on tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"noremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+nnoremap <C-p> :GFiles <CR>
+nnoremap <silent> <leader>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <leader>j :TmuxNavigateDown<cr>
+nnoremap <silent> <leader>k :TmuxNavigateUp<cr>
+nnoremap <silent> <leader>l :TmuxNavigateRight<cr>
+"nnoremap <leader>h :wincmd h<CR>
+"nnoremap <leader>j :wincmd j<CR>
+"nnoremap <leader>k :wincmd k<CR>
+"nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+" nnoremap <leader>o :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>ps :Rg<CR>
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+"nnoremap <silent><leader>+ :vertical resize +5<CR>
+"nnoremap <silent><leader>- :vertical resize -5<CR>
+" noremap <silent><leader>+ :vertical resize +5<CR>
