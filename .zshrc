@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 fpath+=$HOME/.zsh/pure
 
 # Path to your oh-my-zsh installation.
@@ -24,3 +25,6 @@ export NVM_DIR="$HOME/.nvm"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls="k -a"
+alias python="python3"
+alias pip="pip3"
+alias open="xdg-open"

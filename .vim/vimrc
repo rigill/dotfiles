@@ -2,11 +2,6 @@ set nocompatible
 filetype indent plugin on
 syntax on
 
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
 set autoindent                 " Minimal automatic indenting for any filetype.
 set backspace=indent,eol,start " Proper backspace behavior.
 set hidden                     " Possibility to have more than one unsaved buffers.
@@ -35,6 +30,9 @@ set showbreak=" "
 set cursorline
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" Plugins
+:so ~/.vim/plugin/matchit.vim
 
 call plug#begin('~/.vim/plugged')
 Plug 'jremmen/vim-ripgrep'
@@ -65,6 +63,7 @@ let g:netrw_liststyle = 3
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint', 'tsserver'],
 \}
+
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier','eslint'],
