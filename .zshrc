@@ -20,6 +20,8 @@ fi
 
 bindkey -v
 
+export VIM='~/.vim'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
@@ -28,3 +30,4 @@ alias ls="k -a"
 alias python="python3"
 alias pip="pip3"
 alias open="xdg-open"
+alias tmux="tmux -2"

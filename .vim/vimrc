@@ -31,23 +31,6 @@ set cursorline
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" Plugins
-:so ~/.vim/plugin/matchit.vim
-
-call plug#begin('~/.vim/plugged')
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mbbill/undotree'
-Plug 'dense-analysis/ale'
-Plug 'dracula/vim', {'as': 'dracula'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'christoomey/vim-tmux-navigator'
-call plug#end()
-
-colorscheme dracula
-
 if executable('rg')
   let g:rg_derive_root = 'true'
 endif
@@ -81,11 +64,12 @@ let g:coc_disable_startup_warning = 1
 " Set coc to complete on tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 nnoremap <C-p> :GFiles <CR>
-nnoremap <silent> <leader>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <leader>j :TmuxNavigateDown<cr>
-nnoremap <silent> <leader>k :TmuxNavigateUp<cr>
-nnoremap <silent> <leader>l :TmuxNavigateRight<cr>
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ps :Rg<CR>
 nmap <leader>gd <Plug>(coc-definition)
