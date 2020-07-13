@@ -72,8 +72,8 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <leader>u :UndotreeShow<cr>
 nnoremap <leader>ps :Rg<cr>
-nnoremap <leader>gd <Plug>(coc-definition)
-nnoremap <leader>gr <Plug>(coc-references)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 function! GitBranch()
