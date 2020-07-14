@@ -12,12 +12,6 @@ plugins=(git debian k zsh-syntax-highlighting nvm zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
-
 bindkey -v
 
 export VIM='~/.vim'

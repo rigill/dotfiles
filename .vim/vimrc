@@ -2,14 +2,12 @@ set nocompatible
 filetype indent plugin on
 syntax on
 
-set autoindent                 " Minimal automatic indenting for any filetype.
-set backspace=indent,eol,start " Proper backspace behavior.
-set hidden                     " Possibility to have more than one unsaved buffers.
-set incsearch                  " Incremental search, hit `<CR>` to stop.
-set ruler                      " Shows the current line number at the bottom-right
-                               " of the screen.
-set wildmenu                   " Great command-line completion, use `<Tab>` to move
-                               " around and `<CR>` to validate.
+set autoindent
+set backspace=indent,eol,start
+set hidden
+set incsearch
+set ruler
+set wildmenu
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -36,7 +34,7 @@ if executable('rg')
 endif
 
 let mapleader = "\<Space>"
-let g:netrw_browse_split = 5
+let g:netrw_browse_split = 0
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_liststyle = 3
@@ -58,8 +56,6 @@ let g:ale_completion_tsserver_autoimport = 1
 let g:ale_fix_on_save = 1
 let g:colorizer_auto_filetype='css'
 let g:tmux_navigator_no_mappings = 1
-" because i dont have access to vim 8.2 on debian 10
-let g:coc_disable_startup_warning = 1
 
 " Set coc to complete on tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
