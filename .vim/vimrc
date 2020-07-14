@@ -27,13 +27,13 @@ set wrap linebreak
 set showbreak=" "
 set cursorline
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 if executable('rg')
   let g:rg_derive_root = 'true'
 endif
 
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 let g:netrw_browse_split = 0
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
@@ -71,6 +71,10 @@ nnoremap <leader>ps :Rg<cr>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" autocmd FileType javascript nnoremap <buffer> <localleader>c I// <esc>
+" autocmd FileType typescript nnoremap <buffer> <localleader>c I// <esc>
+" autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
