@@ -1,10 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
 fpath+=$HOME/.zsh/pure
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/rrc/.oh-my-zsh"
+
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -27,3 +32,4 @@ alias pip="pip3"
 alias open="xdg-open"
 alias tmux="tmux -2"
 alias chrome="google-chrome"
+alias slack="slack-term-0.5.0"
