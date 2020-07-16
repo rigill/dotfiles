@@ -3,6 +3,7 @@
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/usr/sbin
 fpath+=$HOME/.zsh/pure
 
 # Path to your oh-my-zsh installation.
@@ -32,4 +33,10 @@ alias pip="pip3"
 alias open="xdg-open"
 alias tmux="tmux -2"
 alias chrome="google-chrome"
-alias slack="slack-term-0.5.0"
+alias slack="slack-term"
+alias c="clear"
+
+vpnconnect() {
+  eval `openconnect --authenticate https://remote.dunelm.com`;
+  [ -n $COOKIE ] && echo $COOKIE | sudo openconnect --cookie-on-stdin $HOST --servercert $FINGERPRINT
+}
