@@ -28,6 +28,7 @@ set wrap linebreak
 set showbreak=" "
 set cursorline
 set colorcolumn=80
+set ignorecase
 
 if executable('rg')
   let g:rg_derive_root = 'true'
