@@ -38,7 +38,8 @@ alias tmux="tmux -2"
 alias chrome="google-chrome"
 alias slack="slack-term"
 alias c="clear"
-alias tree="tree -I node_modules --filelimit 3"
+alias x="exit -f"
+alias tree="tree -I node_modules -c"
 
 vpnconnect() {
   eval `openconnect --authenticate https://remote.dunelm.com`;
