@@ -16,9 +16,6 @@ autoload -U promptinit; promptinit
 prompt pure
 plugins=(git debian k zsh-syntax-highlighting nvm zsh-autosuggestions)
 
-# not sure if this is the best way to load this
-xmodmap $HOME/.Xmodmap
-
 source $ZSH/oh-my-zsh.sh
 
 bindkey -v
