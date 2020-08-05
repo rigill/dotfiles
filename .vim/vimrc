@@ -2,6 +2,7 @@ set nocompatible
 filetype indent plugin on
 syntax on
 
+set background=dark
 set autoindent
 set backspace=indent,eol,start
 set hidden
