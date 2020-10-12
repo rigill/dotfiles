@@ -28,8 +28,6 @@ export NVM_DIR="$HOME/.nvm"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls="k -a"
-alias python="python3"
-alias pip="pip3"
 alias open="xdg-open"
 alias tmux="tmux -2"
 alias chrome="google-chrome"
