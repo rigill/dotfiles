@@ -78,3 +78,8 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " autocmd FileType javascript nnoremap <buffer> <localleader>c I// <esc>
 " autocmd FileType typescript nnoremap <buffer> <localleader>c I// <esc>
 " autocmd FileType vim nnoremap <buffer> <localleader>c I" <esc>
+
+augroup tsx_format
+  au!
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END
