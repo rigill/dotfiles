@@ -33,6 +33,7 @@ alias tmux="tmux -2"
 alias chrome="google-chrome"
 alias slack="slack-term"
 alias c="clear"
+alias cat="bat"
 alias x="exit -f"
 alias tree="tree -I node_modules -c"
 
