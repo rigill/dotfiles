@@ -26,6 +26,8 @@ export VIMRC=$VIM/vimrc
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+export BAT_THEME="Dracula"
+
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ls="k -a"
 alias open="xdg-open"
