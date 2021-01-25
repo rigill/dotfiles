@@ -83,3 +83,8 @@ augroup tsx_format
   au!
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript
 augroup END
+
+augroup ejs_format
+  au!
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
+augroup END
